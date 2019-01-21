@@ -24,6 +24,43 @@ html {
 @import "mixins/grid";
 
 @import "grid";
-@import "utilities/display";
-@import "utilities/flex";
-@import "utilities/spacing";
+
+@import "utilities";
+// Only use the utilities we need
+// stylelint-disable-next-line scss/dollar-variable-default
+$utilities: (
+  "display": map_get($utilities, display),
+  "order": map_get($utilities, order),
+  "flex": map_get($utilities, flex),
+  "flex-direction": map_get($utilities, flex-direction),
+  "flex-grow": map_get($utilities, flex-grow),
+  "flex-shrink": map_get($utilities, flex-shrink),
+  "flex-wrap": map_get($utilities, flex-wrap),
+  "justify-content": map_get($utilities, justify-content),
+  "align-items": map_get($utilities, align-items),
+  "align-content": map_get($utilities, align-content),
+  "align-self": map_get($utilities, align-self),
+  "margin": map_get($utilities, margin),
+  "margin-x": map_get($utilities, margin-x),
+  "margin-y": map_get($utilities, margin-y),
+  "margin-top": map_get($utilities, margin-top),
+  "margin-right": map_get($utilities, margin-right),
+  "margin-bottom": map_get($utilities, margin-bottom),
+  "margin-left": map_get($utilities, margin-left),
+  "negative-margin": map_get($utilities, negative-margin),
+  "negative-margin-x": map_get($utilities, negative-margin-x),
+  "negative-margin-y": map_get($utilities, negative-margin-y),
+  "negative-margin-top": map_get($utilities, negative-margin-top),
+  "negative-margin-right": map_get($utilities, negative-margin-right),
+  "negative-margin-bottom": map_get($utilities, negative-margin-bottom),
+  "negative-margin-left": map_get($utilities, negative-margin-left),
+  "padding": map_get($utilities, padding),
+  "padding-x": map_get($utilities, padding-x),
+  "padding-y": map_get($utilities, padding-y),
+  "padding-top": map_get($utilities, padding-top),
+  "padding-right": map_get($utilities, padding-right),
+  "padding-bottom": map_get($utilities, padding-bottom),
+  "padding-left": map_get($utilities, padding-left),
+);
+
+@import "utilities/utilities";
