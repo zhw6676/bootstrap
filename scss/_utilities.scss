@@ -60,7 +60,6 @@ $utilities: () !default;
 $utilities: map-merge(
   (
     "align": (
-      responsive: true,
       property: vertical-align,
       class: align,
       values: baseline top middle bottom text-bottom text-top
@@ -177,12 +176,20 @@ $utilities: map-merge(
     "flex-grow": (
       responsive: true,
       property: flex-grow,
-      values: 0 1
+      class: flex,
+      values: (
+        grow-0: 0,
+        grow-1: 1,
+      )
     ),
     "flex-shrink": (
       responsive: true,
       property: flex-shrink,
-      values: 0 1
+      class: flex,
+      values: (
+        shrink-0: 0,
+        shrink-1: 1,
+      )
     ),
     "flex-wrap": (
       responsive: true,
@@ -193,22 +200,48 @@ $utilities: map-merge(
     "justify-content": (
       responsive: true,
       property: justify-content,
-      values: flex-start flex-end center space-between space-around
+      values: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        between: space-between,
+        around: space-around,
+      )
     ),
     "align-items": (
       responsive: true,
       property: align-items,
-      values: flex-start flex-end center baseline stretch
+      values: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        baseline: baseline,
+        stretch: stretch,
+      )
     ),
     "align-content": (
       responsive: true,
       property: align-content,
-      values: flex-start flex-end center space-between space-around stretch
+      values: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        between: space-between,
+        around: space-around,
+        stretch: stretch,
+      )
     ),
     "align-self": (
       responsive: true,
       property: align-self,
-      values: auto flex-start flex-end center baseline stretch
+      values: (
+        auto: auto,
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        baseline: baseline,
+        stretch: stretch,
+      )
     ),
     "order": (
       responsive: true,
@@ -404,8 +437,12 @@ $utilities: map-merge(
     ),
     "text-decoration": (
       property: text-decoration,
-      class: text,
-      values: (none: none)
+      values: none
+    ),
+    "font-style": (
+      property: font-style,
+      class: font,
+      values: italic
     ),
     "overflow-wrap": (
       property: overflow-wrap word-break, // word-break for IE & < Edge 18
