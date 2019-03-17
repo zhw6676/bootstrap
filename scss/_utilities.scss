@@ -132,7 +132,7 @@ $utilities: map-merge(
     "border-color": (
       property: border-color,
       class: border,
-      values: map_merge($theme-colors, (white: $white))
+      values: map-merge($theme-colors, (white: $white))
     ),
     "visibility": (
       property: visibility,
@@ -270,43 +270,43 @@ $utilities: map-merge(
       responsive: true,
       property: margin,
       class: m,
-      values: map_merge($spacers, (auto: auto))
+      values: map-merge($spacers, (auto: auto))
     ),
     "margin-x": (
       responsive: true,
       property: margin-right margin-left,
       class: mx,
-      values: map_merge($spacers, (auto: auto))
+      values: map-merge($spacers, (auto: auto))
     ),
     "margin-y": (
       responsive: true,
       property: margin-top margin-bottom,
       class: my,
-      values: map_merge($spacers, (auto: auto))
+      values: map-merge($spacers, (auto: auto))
     ),
     "margin-top": (
       responsive: true,
       property: margin-top,
       class: mt,
-      values: map_merge($spacers, (auto: auto))
+      values: map-merge($spacers, (auto: auto))
     ),
     "margin-right": (
       responsive: true,
       property: margin-right,
       class: mr,
-      values: map_merge($spacers, (auto: auto))
+      values: map-merge($spacers, (auto: auto))
     ),
     "margin-bottom": (
       responsive: true,
       property: margin-bottom,
       class: mb,
-      values: map_merge($spacers, (auto: auto))
+      values: map-merge($spacers, (auto: auto))
     ),
     "margin-left": (
       responsive: true,
       property: margin-left,
       class: ml,
-      values: map_merge($spacers, (auto: auto))
+      values: map-merge($spacers, (auto: auto))
     ),
     // Negative margin utilities
     "negative-margin": (
@@ -426,6 +426,17 @@ $utilities: map-merge(
         black-50: rgba($black, .5),
         white-50: rgba($white, .5),
         reset: inherit,
+      )
+    ),
+    "background-color": (
+      property: background-color,
+      class: bg,
+      values: map-merge(
+        $theme-colors,
+        (
+          white: $white,
+          transparent: transparent
+        )
       )
     ),
     "white-space": (
