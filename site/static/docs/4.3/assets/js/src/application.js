@@ -21,17 +21,16 @@
 
   document.querySelector('.bd-toggle-dark-mode')
     .addEventListener('click', function () {
-      var attr = document.getElementById('dark-mode-css').getAttribute('rel')
-      var altRegex = /alternate/
+      var isDarkModeEnabled = localStorage.getItem('bs-docs-dark-mode') === 0 || localStorage.getItem('bs-docs-dark-mode') === null
 
-      if (altRegex.test(attr)) {
-        // `alternate` string is present in `rel` so let's remove it
-        attr.replace(altRegex, 'stylesheet')
-        localStorage.setItem('bs-docs-dark-mode', 'enabled')
-      } else {
+      if (isDarkModeEnabled) {
         // `alternate` string is not present in `rel` so let's add it
-        attr.replace(altRegex, 'alternate')
-        localStorage.setItem('bs-docs-dark-mode', 'disabled')
+        localStorage.setItem('bs-docs-dark-mode', 1)
+        document.documentElement.classList.add('bs-docs-dark-mode')
+      } else {
+        // `alternate` string is present in `rel` so let's remove it
+        localStorage.setItem('bs-docs-dark-mode', 0)
+        document.documentElement.classList.remove('bs-docs-dark-mode')
       }
     })
 
